@@ -48,7 +48,7 @@ class Ability < ActiveRecord::Base
     NAME_LASER_DEFLECTION = "Laser Deflection",
     NAME_MAGIC = "Magic",
     NAME_MAGICAL_SHIELD = "Magical Shield",
-    NAME_MASTER_BUILDING = "Master Building",
+    NAME_MASTER_BUILD = "Master Build",
     NAME_MIND_CONTROL = "Mind Control",
     NAME_MINI = "Mini Access",
     NAME_POLE_VAULT = "Pole Vault",

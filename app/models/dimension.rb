@@ -20,6 +20,7 @@ class Dimension < ActiveRecord::Base
     NAME_DC = "DC Comics",
     NAME_DOCTOR_WHO = "Doctor Who",
     NAME_GHOSTBUSTERS = "Ghostbusters",
+    NAME_JURASSIC_WORLD = "Jurassic World",
     NAME_LEGO_MOVIE = "The LEGO Movie",
     NAME_LORD_OF_THE_RINGS = "The Lord of the Rings",
     NAME_MIDWAY = "Midway Games",
