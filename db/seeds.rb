@@ -6,7 +6,79 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# SAMPLE CHARACTER NODE
+# {
+#   :class => Figurine::Character,
+#   :name => "",
+#   :dimension => Dimension::NAME,
+#   :abilities => []
+# }
+
+# SAMPLE VEHICLE/GADGET NODE
+# {
+#   :class => Figurine::Vehicle,
+#   :name => "",
+#   :dimension => Dimension::NAME,
+#   :owner => "",
+#   :builds => [
+#     {
+#       :name => "",
+#       :version => 1,
+#       :abilities => []
+#     },
+#     {
+#       :name => "",
+#       :version => 2,
+#       :abilities => []
+#     },
+#     {
+#       :name => "",
+#       :version => 3,
+#       :abilities => []
+#     }
+#   ]
+# }
+
+# SAMPLE FUN PACK NODE
+# {
+#   :class => Pack::Fun,
+#   :name => "",
+#   :set_number => ,
+#   :figurines => [
+#     {
+#       :class => Figurine::Character,
+#       :name => "",
+#       :dimension => Dimension::NAME_,
+#       :abilities => []
+#     },
+#     {
+#       :class => Figurine::Vehicle,
+#       :name => "",
+#       :dimension => Dimension::NAME_,
+#       :owner => "",
+#       :builds => [
+#         {
+#           :name => "",
+#           :version => 1,
+#           :abilities => []
+#         },
+#         {
+#           :name => "",
+#           :version => 2,
+#           :abilities => []
+#         },
+#         {
+#           :name => "",
+#           :version => 3,
+#           :abilities => []
+#         }
+#       ]
+#     }
+#   ]
+# }
+
 waves_array = [
+  # WAVE 1
   {
     :number => 1,
     :release_date => Date.new(2015, 9, 27),
@@ -176,7 +248,7 @@ waves_array = [
       # Back to the Future Level Pack (71201)
       {
         :class => Pack::Level,
-        :name => "Back to the Future",
+        :name => "Back to the Future Level Pack",
         :set_number => 71201,
         :figurines => [
           # Marty McFly
@@ -254,7 +326,7 @@ waves_array = [
       # The Simpsons Level Pack (71202)
       {
         :class => Pack::Level,
-        :name => "The Simpsons",
+        :name => "The Simpsons Level Pack",
         :set_number => 71202,
         :figurines => [
           # Homer Simpson
@@ -265,7 +337,7 @@ waves_array = [
             :abilities => [
               Ability::NAME_BIG,
               Ability::NAME_SONAR,
-              Ability::NAME_SUPER_STRENGTH
+              Ability::NAME_STRENGTH
             ]
           },
           # Homer's Car
@@ -281,7 +353,7 @@ waves_array = [
                 :abilities => [
                   Ability::NAME_ACCELERATOR
                 ]
-              },,
+              },
               {
                 :name => "The Homercraft",
                 :version => 2,
@@ -289,12 +361,12 @@ waves_array = [
                   Ability::NAME_FLYING,
                   Ability::NAME_TOWBAR
                 ]
-              }
+              },
               {
                 :name => "The SubmaHomer",
                 :version => 3,
                 :abilities => [
-                  Ability::NAME_DIVING,
+                  Ability::NAME_DIVE,
                   Ability::NAME_SILVER_LEGO
                 ]
               }
@@ -334,7 +406,7 @@ waves_array = [
       # Portal 2 Level Pack (71203)
       {
         :class => Pack::Level,
-        :name => "Portal 2",
+        :name => "Portal 2 Level Pack",
         :set_number => 71203,
         :figurines => [
           # Chell
@@ -407,8 +479,8 @@ waves_array = [
       },
       # Jurassic World Team Pack (71205)
       {
-        :class => Pack::Team
-        :name => "Jurassic World",
+        :class => Pack::Team,
+        :name => "Jurassic World Team Pack",
         :set_number => 71205,
         :figurines => [
           # Owen
@@ -453,7 +525,7 @@ waves_array = [
                 :name => "Venom Raptor",
                 :version => 2,
                 :abilities => [
-                  Ability::NAME_SUPER_STRENGTH,
+                  Ability::NAME_STRENGTH,
                   Ability::NAME_VINE
                 ]
               },
@@ -502,9 +574,263 @@ waves_array = [
             ]
           }
         ]
+      },
+      # Scooby-Doo Team Pack (71206)
+      {
+        :class => Pack::Team,
+        :name => "Scooby-Doo Team Pack",
+        :set_number => 71206,
+        :figurines => [
+          # Scooby Doo
+          {
+            :class => Figurine::Character,
+            :name => "Scooby Doo",
+            :dimension => Dimension::NAME_SCOOBY_DOO,
+            :abilities => [
+              Ability::NAME_DIG,
+              Ability::NAME_DIVE,
+              Ability::NAME_STEALTH,
+              Ability::NAME_TRACKING
+            ]
+          },
+          # Shaggy
+          {
+            :class => Figurine::Character,
+            :name => "Shaggy",
+            :dimension => Dimension::NAME_SCOOBY_DOO,
+            :abilities => [
+              Ability::NAME_ILLUMINATION,
+              Ability::NAME_STEALTH,
+              Ability::NAME_TRACKING
+            ]
+          },
+          # Mystery Machine
+          {
+            :class => Figurine::Vehicle,
+            :name => "Mystery Machine",
+            :dimension => Dimension::NAME_SCOOBY_DOO,
+            :owner => "Shaggy",
+            :builds => [
+              # Mystery Machine
+              {
+                :name => "Mystery Machine",
+                :version => 1,
+                :abilities => [
+                  Ability::NAME_ACCELERATOR
+                ]
+              },
+              # Mystery Tow & Go
+              {
+                :name => "Mystery Tow & Go",
+                :version => 2,
+                :abilities => [
+                  Ability::NAME_ACCELERATOR,
+                  Ability::NAME_TOWBAR
+                ]
+              },
+              # Mystery Monster
+              {
+                :name => "Mystery Monster",
+                :version => 2,
+                :abilities => [
+                  Ability::NAME_HAZARD,
+                  Ability::NAME_GROWTH
+                ]
+              }
+            ]
+          },
+          # Scooby Snack
+          {
+            :class => Figurine::Gadget,
+            :name => "Scooby Snack",
+            :dimension => Dimension::NAME_SCOOBY_DOO,
+            :owner => "Scooby Doo",
+            :builds => [
+              # Scooby Snack
+              {
+                :name => "Scooby Snack",
+                :version => 1,
+                :abilities => [
+                  Ability::NAME_STRENGTH
+                ]
+              },
+              # Scooby Fire Snack
+              {
+                :name => "Scooby Fire Snack",
+                :version => 2,
+                :abilities => []
+              },
+              # Scooby Ghost Snack
+              {
+                :name => "Scooby Ghost Snack",
+                :version => 2,
+                :abilities => []
+              }
+            ]
+          }
+        ]
+      },
+      # Wonder Woman Fun Pack (71209)
+      {
+        :class => Pack::Fun,
+        :name => "Wonder Woman Fun Pack",
+        :set_number => 71209,
+        :figurines => [
+          # Wonder Woman
+          {
+            :class => Figurine::Character,
+            :name => "Wonder Woman",
+            :dimension => Dimension::NAME_DC,
+            :abilities => [
+              Ability::NAME_BOOMERANG,
+              Ability::NAME_DIVE,
+              Ability::NAME_FLYING,
+              Ability::NAME_GRAPPLE,
+              Ability::NAME_INVULNERABILITY,
+              Ability::NAME_LASER_DEFLECTION,
+              Ability::NAME_MIND_CONTROL,
+              Ability::NAME_STRENGTH
+            ]
+          },
+          # Invisible Jet
+          {
+            :class => Figurine::Vehicle,
+            :name => "Invisible Jet",
+            :dimension => Dimension::NAME_DC,
+            :owner => "Wonder Woman",
+            :builds => [
+              {
+                :name => "Invisible Jet",
+                :version => 1,
+                :abilities => [
+                  Ability::NAME_FLYING
+                ]
+              },
+              {
+                :name => "Laser Shooter",
+                :version => 2,
+                :abilities => [
+                  Ability::NAME_FLYING,
+                  Ability::NAME_LASER
+                ]
+              },
+              {
+                :name => "Torpedo Bomber",
+                :version => 3,
+                :abilities => [
+                  Ability::NAME_FLYING,
+                  Ability::NAME_SILVER_LEGO
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      # Cyborg Fun Pack (71210)
+      {
+        :class => Pack::Fun,
+        :name => "Cyborg Fun Pack",
+        :set_number => 71210,
+        :figurines => [
+          # Cyborg
+          {
+            :class => Figurine::Character,
+            :name => "Cyborg",
+            :dimension => Dimension::NAME_DC,
+            :abilities => [
+              Ability::NAME_BIG,
+              Ability::NAME_DIVE,
+              Ability::NAME_LASER,
+              Ability::NAME_SONAR,
+              Ability::NAME_STEALTH,
+              Ability::NAME_TARGET
+            ]
+          },
+          # Cyber-Guard
+          {
+            :class => Figurine::Vehicle,
+            :name => "Cyber-Guard",
+            :dimension => Dimension::NAME_DC,
+            :owner => "Cyborg",
+            :builds => [
+              {
+                :name => "Cyber-Guard",
+                :version => 1,
+                :abilities => []
+              },
+              {
+                :name => "Cyber-Wrecker",
+                :version => 2,
+                :abilities => [
+                  Ability::NAME_DIG,
+                  Ability::NAME_SILVER_LEGO,
+                  Ability::NAME_STRENGTH
+                ]
+              },
+              {
+                :name => "Laser Robot Walker",
+                :version => 3,
+                :abilities => [
+                  Ability::NAME_LASER
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      # Emmet Fun Pack (71213)
+      {
+        :class => Pack::Fun,
+        :name => "Emmet Fun Pack",
+        :set_number => 71213,
+        :figurines => [
+          # Emmet
+          {
+            :class => Figurine::Character,
+            :name => "Emmet",
+            :dimension => Dimension::NAME_LEGO_MOVIE,
+            :abilities => [
+              Ability::NAME_DRILL,
+              Ability::NAME_FIXIT,
+              Ability::NAME_MASTER_BUILD
+            ]
+          },
+          # Emmet's Excavator
+          {
+            :class => Figurine::Vehicle,
+            :name => "Emmet's Excavator",
+            :dimension => Dimension::NAME_LEGO_MOVIE,
+            :owner => "Emmet",
+            :builds => [
+              {
+                :name => "Emmet's Excavator",
+                :version => 1,
+                :abilities => [
+                  Ability::NAME_ACCELERATOR,
+                  Ability::NAME_DIG
+                ]
+              },
+              {
+                :name => "Destroy Dozer",
+                :version => 2,
+                :abilities => [
+                  Ability::NAME_ACCELERATOR,
+                  Ability::NAME_DIG,
+                  Ability::NAME_TOWBAR
+                ]
+              },
+              {
+                :name => "",
+                :version => 3,
+                :abilities => []
+              }
+            ]
+          }
+        ]
       }
     ]
   },
+  # WAVE 2
   {
     :number => 2,
     :release_date => Date.new(2015, 11, 3),
@@ -666,6 +992,7 @@ waves_array.each do |wave_hash|
       end
     end
 
+    # ITERATE OVER EACH LEVEL IN PACK
     levels_array = pack_hash[:levels] || []
     levels_array.each do |level_hash|
       dimension_name = level_hash[:dimension]
@@ -679,11 +1006,12 @@ waves_array.each do |wave_hash|
         puts "    LEVEL: #{level.inspect}"
       end
 
+      # ITERATE WITH ALL ABILITIES ASSOCIATED WITH A LEVEL (REQUIRED TO COMPLETE IT)
       abilities_array = level_hash[:abilities] || []
       abilities_array.each do |ability_name|
         ability = Ability.where(:name => ability_name).first_or_create
-        unless level.required_ability_ids.include?(ability.id)
-          level.required_abilities << ability
+        unless level.ability_ids.include?(ability.id)
+          level.abilities << ability
           puts "      ABILITY: #{ability.inspect}"
         end
       end
