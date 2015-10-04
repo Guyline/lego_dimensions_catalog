@@ -22,16 +22,22 @@ class Pack < ActiveRecord::Base
     :class_name => "Figurine::Character",
     :through => :pack_figurines,
     :source => :figurine
+  has_many      :character_abilities, -> { uniq },
+    :through => :characters,
+    :source => :abilities
   has_many      :vehicles,
     :class_name => "Figurine::Vehicle",
     :through => :pack_figurines,
     :source => :figurine
+  has_many      :vehicle_abilities, -> { uniq },
+    :through => :vehicles,
+    :source => :abilities
   has_many      :gadgets,
     :class_name => "Figurine::Gadget",
     :through => :pack_figurines,
     :source => :figurine
-  has_many      :abilities, -> { uniq },
-    :through => :figurines,
+  has_many      :gadget_abilities, -> { uniq },
+    :through => :gadgets,
     :source => :abilities
   has_many      :dimensions, -> { uniq },
     :through => :figurines,
@@ -45,5 +51,13 @@ class Pack < ActiveRecord::Base
   after_initialize  :set_defaults
 
   def set_defaults
+  end
+
+  def ability_ids
+    (character_ability_ids + vehicle_ability_ids + gadget_ability_ids).uniq.sort
+  end
+
+  def abilities
+    Ability.where(:id => ability_ids)
   end
 end
