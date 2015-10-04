@@ -16,7 +16,6 @@ class Level < ActiveRecord::Base
   belongs_to    :dimension
 
   has_many      :level_abilities
-  has_many      :required_abilities,
-    :through => :level_abilities,
-    :source => :ability
+  has_many      :abilities,
+    :through => :level_abilities
 end

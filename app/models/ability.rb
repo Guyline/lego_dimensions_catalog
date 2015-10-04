@@ -60,7 +60,7 @@ class Ability < ActiveRecord::Base
     NAME_SPEED = "Speed",
     NAME_SPINJUTSU = "Spinjutsu",
     NAME_STEALTH = "Stealth",
-    NAME_SUPER_STRENGTH = "Super Strength",
+    NAME_STRENGTH = "Super Strength",
     NAME_SUSPEND_GHOST = "Suspend Ghost",
     NAME_TARGET = "Target",
     NAME_TECHNOLOGY = "Technology",
