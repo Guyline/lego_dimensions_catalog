@@ -73,22 +73,23 @@ class Ability < ActiveRecord::Base
     NAME_XRAY = "X-Ray Vision"
   ]
 
-  # NAMES_REQUIRED = [
-  #   NAME_CRACKED_LEGO,
-  #   NAME_DIG,
-  #   NAME_DRONE,
-  #   NAME_ELECTRICITY,
-  #   NAME_HACKING,
-  #   NAME_HAZARD,
-  #   NAME_LASER,
-  #   NAME_MINI,
-  #   NAME_PORTAL_GUN,
-  #   NAME_RAINBOW_LEGO,
-  #   NAME_SILVER_LEGO,
-  #   NAME_SUSPEND_GHOST,
-  #   NAME_TARGET,
-  #   NAME_TOWBAR
-  # ]
-  #
-  # scope :required, -> { where(:abilities => {:name => Ability::NAMES_REQUIRED}) }
+  NAMES_REQUIRED = [
+    NAME_CRACKED_LEGO,
+    NAME_DIG,
+    NAME_DRONE,
+    NAME_ELECTRICITY,
+    NAME_HACKING,
+    NAME_HAZARD,
+    NAME_LASER,
+    NAME_MAGIC,
+    NAME_MINI,
+    NAME_PORTAL_GUN,
+    NAME_RAINBOW_LEGO,
+    NAME_SILVER_LEGO,
+    NAME_SUSPEND_GHOST,
+    NAME_TARGET,
+    NAME_TOWBAR
+  ].sort!
+
+  scope :required, -> { where(:abilities => {:name => Ability::NAMES_REQUIRED}) }
 end
