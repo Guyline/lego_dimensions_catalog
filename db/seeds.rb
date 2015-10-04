@@ -25,7 +25,7 @@ waves_array = [
             :abilities => [
               Ability::NAME_RELIC_DETECTOR,
               Ability::NAME_ACROBAT,
-              Ability::NAME_MASTER_BUILDING
+              Ability::NAME_MASTER_BUILD
             ]
           },
           # Gandalf
@@ -89,6 +89,7 @@ waves_array = [
         ],
         :worlds => [],
         :levels => [
+          # Follow the LEGO Brick Road
           {
             :name => "Follow the LEGO Brick Road",
             :dimension => Dimension::NAME_WIZARD_OF_OZ,
@@ -100,60 +101,70 @@ waves_array = [
               Ability::NAME_LASER
             ]
           },
+          # Meltdown at Sector 7-G
           {
             :name => "Meltdown at Sector 7-G",
             :dimension => Dimension::NAME_SIMPSONS,
             :location => "Springfield",
             :abilities => []
           },
+          # Elements of Surprise
           {
             :name => "Elements of Surprise",
             :dimension => Dimension::NAME_NINJAGO,
             :location => "Chen's Island",
             :abilities => []
           },
+          # A Dalektable Adventure
           {
             :name => "A Dalektable Adventure",
             :dimension => Dimension::NAME_DOCTOR_WHO,
             :location => "Cybership",
             :abilities => []
           },
+          # Painting the Town Black
           {
             :name => "Painting the Town Black",
             :dimension => Dimension::NAME_DC,
             :location => "Metropolis",
             :abilities => []
           },
+          # Once Upon a Time Machine in the Past
           {
             :name => "Once Upon a Time Machine in the Past",
             :dimension => Dimension::NAME_BACK_TO_THE_FUTURE,
             :location => "Hill Valley (1865)",
             :abilites => []
           },
+          # GLaD to See You
           {
             :name => "GLaD to See You",
             :dimension => Dimension::NAME_PORTAL,
             :location => "Aperture Science Enrichment Center",
             :abilities => []
           },
+          # Riddle-earth
           {
             :name => "Riddle-earth",
             :dimension => Dimension::NAME_LORD_OF_THE_RINGS,
             :location => "Minas Tirith",
             :abilities => []
           },
+          # The Phantom Zone
           {
             :name => "The Phantom Zone",
             :dimension => Dimension::NAME_GHOSTBUSTERS,
             :location => "New York City",
             :abilities => []
           },
+          # All Your Bricks Are Belong To Us
           {
             :name => "All Your Bricks Are Belong To Us",
             :dimension => Dimension::NAME_MIDWAY,
             :location => "Midway Arcade games",
             :abilities => []
           },
+          # Mystery Mansion Mash-Up
           {
             :name => "Mystery Mansion Mash-Up",
             :dimension => Dimension::NAME_SCOOBY_DOO,
@@ -320,6 +331,7 @@ waves_array = [
           }
         ]
       },
+      # Portal 2 Level Pack (71203)
       {
         :class => Pack::Level,
         :name => "Portal 2",
@@ -393,6 +405,110 @@ waves_array = [
           }
         ]
       },
+      # Jurassic World Team Pack (71205)
+      {
+        :class => Pack::Team
+        :name => "Jurassic World",
+        :set_number => 71205,
+        :figurines => [
+          # Owen
+          {
+            :class => Figurine::Character,
+            :name => "Owen",
+            :dimension => Dimension::NAME_JURASSIC_WORLD,
+            :abilities => [
+              Ability::NAME_STEALTH,
+              Ability::NAME_TARGET,
+              Ability::NAME_TRACKING,
+              Ability::NAME_VINE
+            ]
+          },
+          # ACU Trooper
+          {
+            :class => Figurine::Character,
+            :name => "ACU Trooper",
+            :dimension => Dimension::NAME_JURASSIC_WORLD,
+            :abilities => [
+              Ability::NAME_ELECTRICITY,
+              Ability::NAME_ILLUMINATION
+            ]
+          },
+          # Velociraptor
+          {
+            :class => Figurine::Vehicle,
+            :name => "Velociraptor",
+            :dimension => Dimension::NAME_JURASSIC_WORLD,
+            :owner => "Owen",
+            :builds => [
+              # Velociraptor
+              {
+                :name => "Velociraptor",
+                :version => 1,
+                :abilities => [
+                  Ability::NAME_VINE
+                ]
+              },
+              # Venom Raptor
+              {
+                :name => "Venom Raptor",
+                :version => 2,
+                :abilities => [
+                  Ability::NAME_SUPER_STRENGTH,
+                  Ability::NAME_VINE
+                ]
+              },
+              # Spike Attack Raptor
+              {
+                :name => "Spike Attack Raptor",
+                :version => 3,
+                :abilities => [
+                  Ability::NAME_DIG,
+                  Ability::NAME_VINE
+                ]
+              }
+            ]
+          },
+          # Gyrosphere
+          {
+            :class => Figurine::Vehicle,
+            :name => "Gyrosphere",
+            :dimension => Dimension::NAME_JURASSIC_WORLD,
+            :owner => "ACU",
+            :builds => [
+              # Gyrosphere
+              {
+                :name => "Gyrosphere",
+                :version => 1,
+                :abilities => [
+                  Ability::NAME_GYROSPHERE
+                ]
+              },
+              # Sonic Beam Gyrosphere
+              {
+                :name => "Sonic Beam Gyrosphere",
+                :version => 1,
+                :abilities => [
+                  Ability::NAME_GYROSPHERE
+                ]
+              },
+              # Speed Boost Gyrosphere
+              {
+                :name => "Speed Boost Gyrosphere",
+                :version => 1,
+                :abilities => [
+                  Ability::NAME_GYROSPHERE
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    :number => 2,
+    :release_date => Date.new(2015, 11, 3),
+    :packs => [
       # Doctor Who Level Pack (72104)
       {
         :class => Pack::Level,
